@@ -16,18 +16,22 @@ const Button = styled.input.attrs({ type: 'button', value: 'Button' })`
 `;
 
 
+interface IDivProps{
+    size:string;
+}
 
-// const Div = styled.div.attrs(props => ({
-//     size: props.size || '1em'
-// }))`
 
-//     background-color: red;
-//     width: 200px;
-//     height: 200px;
+const Div = styled.div.attrs((props:IDivProps) => ({
+    size: props.size || '1em'
+}))`
 
-//     margin: ${props => props.size};
-//     padding: ${props => props.size};
-// `;
+    background-color: red;
+    width: 200px;
+    height: 200px;
+
+    margin: ${props => props.size};
+    padding: ${props => props.size};
+`;
 
 
 const stretchAnim = keyframes`
@@ -60,7 +64,7 @@ export function Parent(){
             <Heading>Rubrik</Heading>
             <Button color={buttonColor}></Button>
 
-            {/* <Div size="20px">asdf</Div> */}
+            <Div size="20px">asdf</Div>
 
             <AnimatedDiv></AnimatedDiv>
 
